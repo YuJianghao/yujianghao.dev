@@ -101,7 +101,7 @@ function App() {
         </p>
         <p className="font-light font-mono text-xs">
           <a
-            href="mail:yjh2011@live.com"
+            href="mailto:yjh2011@live.com"
             className="color-light decoration-none"
           >
             <Icon name="i-carbon-email" /> yjh2011@live.com
