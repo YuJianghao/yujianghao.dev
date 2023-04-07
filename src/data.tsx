@@ -1,3 +1,6 @@
+import { ReactNode } from "react"
+import { Icon } from "./Icon"
+
 export interface IWork {
   company: string
   position: string
@@ -5,7 +8,7 @@ export interface IWork {
   time: string
   descriptions: string[]
   links?: {
-    text: string
+    text: ReactNode
     url: string
   }[]
 }
@@ -17,16 +20,16 @@ export const works: IWork[] = [
     skills: ["React", "TS"],
     time: "2022.10 - 今",
     descriptions: [
-      "LCDP 低代码编排平台，实现业务逻辑可视化编辑，业务节点数据动态配置，支撑面向非研发人员的业务开发",
+      "低代码编排平台，实现业务逻辑可视化编辑，业务节点数据动态配置，支撑非研发人员的业务开发",
       "lib-canary 灰度发布工具，实现基于用户和设备的灰度发布，保障新功能稳定可控上线",
-      "lib-apollo 配置接入，实现基于 Apollo 的配置中心，支持配置的秒级动态更新",
+      "lib-apollo 配置接入，实现基于 Apollo 的配置中心，支持应用配置的秒级动态更新",
     ],
   },
   {
     company: "北京交研智慧",
     position: "前端工程师",
     skills: ["React", "TS", "JS"],
-    time: "2022.7 - 2022.10",
+    time: "2022.07 - 2022.10",
     descriptions: [
       "重构项目代码，推广 hook 使用，设计和 MR 搭配使用的 Git Flow 工作流",
     ],
@@ -35,14 +38,14 @@ export const works: IWork[] = [
     company: "天津光电",
     position: "前端工程师",
     skills: ["Vue", "JS"],
-    time: "2022.5 - 2022.7",
+    time: "2022.05 - 2022.07",
     descriptions: ["工程化；创建可配置可自定义的表单组件和表格组件"],
   },
   {
     company: "知乎",
     position: "社区前端工程师",
     skills: ["React", "TS"],
-    time: "2021.3 - 2021.6",
+    time: "2021.03 - 2021.06",
     descriptions: [
       "使用 React / React hook 进行社区前端的日常维护、开发、Code Review 等",
       "负责评论区表情和图片的发送和渲染，参与编辑器和回答内容渲染系统的迁移和重构",
@@ -57,7 +60,7 @@ export interface IProject {
   type: string
   skills?: string[]
   links?: {
-    text: string
+    text: ReactNode
     url: string
   }[]
   time: string
@@ -70,7 +73,7 @@ export const projects: IProject[] = [
     type: "开源项目",
     links: [
       {
-        text: "项目地址",
+        text: <Icon name="i-logos-github-icon" />,
         url: "https://github.com/YuJianghao/LinkAlias",
       },
     ],
@@ -82,11 +85,7 @@ export const projects: IProject[] = [
     skills: ["Vue", "TS", "Koa"],
     links: [
       {
-        text: "在线演示",
-        url: "https://link.yujianghao.cn/hexondemo",
-      },
-      {
-        text: "项目地址",
+        text: <Icon name="i-logos-github-icon" />,
         url: "https://link.yujianghao.cn/hexongithub",
       },
     ],
@@ -115,7 +114,7 @@ export const projects: IProject[] = [
     type: "Node.js 包",
     links: [
       {
-        text: "项目地址",
+        text: <Icon name="i-logos-npm-icon" />,
         url: "https://www.npmjs.com/package/@winwin/keybinding.js",
       },
     ],
