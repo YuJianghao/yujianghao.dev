@@ -1,11 +1,40 @@
 import { ReactNode } from "react"
-import { IWork, works } from "./data"
+import { IWork, projects, works } from "./data"
 import { Icon } from "./Icon"
 
 interface BaseItemProps {
   children: ReactNode
   time: string
   details: string[]
+}
+
+function Projects() {
+  return (
+    <div
+      className="grid gap-2"
+      style={{
+        gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+      }}
+    >
+      {projects.map((p) => {
+        return (
+          <a
+            className="relative overflow-hidden border-rounded decoration-none"
+            href={p.repo}
+            target="_blank"
+          >
+            <div className="bg-primary op-10 w-full h-full absolute" />
+            <div className="px4 py2">
+              <span className="color-primary">{p.id}</span>
+              <span className="ml-2 font-light text-sm color-initial">
+                {p.name}
+              </span>
+            </div>
+          </a>
+        )
+      })}
+    </div>
+  )
 }
 
 function BaseItem(props: BaseItemProps) {
@@ -60,11 +89,15 @@ function Section({ title, children }: { title: string; children: any }) {
 
 function App() {
   return (
-    <main className="mx-auto lg:w-180">
-      <div className="bg-primary color-light p4">
+    <main className="mx-auto lg:w-200">
+      <div className="bg-primary color-light p4 border-rounded">
         <h1>于江浩</h1>
         <p className="font-light">
           Hi，我是于江浩，一个享受编码乐趣的前端工程师。
+          <Icon name="i-logos-vue" />
+          <Icon name="i-logos-react" />
+          <Icon name="i-logos-javascript" />
+          <Icon name="i-logos-typescript-icon" />
         </p>
         <p className="font-light font-mono text-xs">
           <a
@@ -75,7 +108,7 @@ function App() {
           </a>
           <a
             href="https://github.com/YuJianghao"
-            className="color-light decoration-none ml-2"
+            className="color-light decoration-none mx-2"
           >
             <Icon name="i-mdi-github" className="color-light" /> YuJianghao
           </a>
@@ -86,6 +119,10 @@ function App() {
           <WorkItem key={idx} work={work} />
         ))}
       </Section>
+      <Section title="个人项目">
+        <Projects />
+      </Section>
+      <div className="h10"></div>
     </main>
   )
 }

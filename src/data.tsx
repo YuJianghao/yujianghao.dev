@@ -56,68 +56,36 @@ export const works: IWork[] = [
 ]
 
 export interface IProject {
+  id: string
   name: string
-  type: string
   skills?: string[]
-  links?: {
-    text: ReactNode
-    url: string
-  }[]
-  time: string
-  descriptions?: string[]
+  repo: string
 }
 
 export const projects: IProject[] = [
   {
-    name: "LinkAlias 链接管理平台",
-    type: "开源项目",
-    links: [
-      {
-        text: <Icon name="i-logos-github-icon" />,
-        url: "https://github.com/YuJianghao/LinkAlias",
-      },
-    ],
-    time: "2023.4 - 今",
+    id: "LinkAlias",
+    name: "链接管理平台",
+    repo: "https://github.com/YuJianghao/LinkAlias",
   },
   {
-    name: "Hexon:针对 hexo 博客的在线博客编辑器",
-    type: "独立开源项目",
-    skills: ["Vue", "TS", "Koa"],
-    links: [
-      {
-        text: <Icon name="i-logos-github-icon" />,
-        url: "https://link.yujianghao.cn/hexongithub",
-      },
-    ],
-    time: "2019.12 - 今",
-    descriptions: [
-      "Vue3 + Pinia + Vite + Koa + Typescript 实现从产品原型到代码编写的全栈开发",
-      "开发 Hexon UI 组件库，用于支持 hexon 应用开发",
-    ],
+    id: "heoxn",
+    name: "在线 hexo 博客编辑器",
+    repo: "https://github.com/gethexon/hexon",
   },
   {
-    name: "仿 Things3 的待办应用",
-    type: "技术探索",
-    links: [
-      {
-        text: "在线演示",
-        url: "http://todo.yujianghao.cn/#/project/inbox",
-      },
-    ],
-    time: "2020.10",
-    descriptions: [
-      "Typescript 开发后端功能，TQL 构建 GraphQL 查询语句，TypeORM + Sqlite 操作数据库",
-    ],
+    id: "koa-authentication",
+    name: "极简 koa 认证中间件",
+    repo: "https://github.com/YuJianghao/koa-authentication",
   },
   {
-    name: "Keybinding.js:针对 HTML 的简易快捷键绑定包",
-    type: "Node.js 包",
-    links: [
-      {
-        text: <Icon name="i-logos-npm-icon" />,
-        url: "https://www.npmjs.com/package/@winwin/keybinding.js",
-      },
-    ],
-    time: "2020.10",
+    id: "imageur",
+    name: "图床上传工具",
+    repo: "https://github.com/YuJianghao/imageur",
+  },
+  {
+    id: "bpmn-js-doc",
+    name: "bpmn-js 开发文档",
+    repo: "https://github.com/YuJianghao/bpmn-js-doc",
   },
 ]
